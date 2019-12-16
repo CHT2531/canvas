@@ -13,6 +13,64 @@ function makeChart(data){
   films = data;
   console.log(films);
   //add your code for drawing in here
+  const ctx = canvasDiv.getContext("2d");
+  // //x axis
+  // ctx.beginPath();
+  // ctx.moveTo(40,360);
+  // ctx.lineTo(560,360);
+  // ctx.stroke();
+  // //y axis
+  // ctx.beginPath();
+  // ctx.moveTo(60,360);
+  // ctx.lineTo(60,40);
+  // ctx.stroke();
+  // ctx.fillText('Duration', 10, 180);
+  // //draw the bars
+  // ctx.textAlign="center";
+  // let xPos = 80;
+  // films.forEach(function(film){
+  //   const rectHeight = film.duration*2
+  //   ctx.strokeRect(xPos,360,50,-rectHeight)
+  //   ctx.fillText(film.title, xPos+20, 375);
+  //   xPos = xPos+120;
+  // })
+  const titles = films.map(function(film){
+    return film.title;
+  })
+
+  const durations = films.map(function(film){
+    return film.duration;
+  })
+
+const chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: titles,
+        datasets: [{
+            label: 'Film Durations',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: durations
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+      responsive:false,
+      scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
 }//end of makeChart function
 
 function init(){
