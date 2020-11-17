@@ -1,5 +1,4 @@
-let films;
-let canvasDiv;
+
 function doAjax(url,callback)
 {
 	fetch(url).then(function(response) {
@@ -9,75 +8,22 @@ function doAjax(url,callback)
 	});
 }
 
-function makeChart(data){
-  films = data;
+function makeChart(data)
+{
+  const films = data;
   console.log(films);
-  //add your code for drawing in here
+	const canvasDiv = document.querySelector("#myCanvas");
   const ctx = canvasDiv.getContext("2d");
-  // //x axis
-  // ctx.beginPath();
-  // ctx.moveTo(40,360);
-  // ctx.lineTo(560,360);
-  // ctx.stroke();
-  // //y axis
-  // ctx.beginPath();
-  // ctx.moveTo(60,360);
-  // ctx.lineTo(60,40);
-  // ctx.stroke();
-  // ctx.fillText('Duration', 10, 180);
-  // //draw the bars
-  // ctx.textAlign="center";
-  // let xPos = 80;
-  // films.forEach(function(film){
-  //   const rectHeight = film.duration*2
-  //   ctx.strokeRect(xPos,360,50,-rectHeight)
-  //   ctx.fillText(film.title, xPos+20, 375);
-  //   xPos = xPos+120;
-  // })
-  const titles = films.map(function(film){
-    return film.title;
-  })
-
-  const durations = films.map(function(film){
-    return film.duration;
-  })
-
-const chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'bar',
-
-    // The data for our dataset
-    data: {
-        labels: titles,
-        datasets: [{
-            label: 'Film Durations',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: durations
-        }]
-    },
-
-    // Configuration options go here
-    options: {
-      responsive:false,
-      scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-
-
+	//add your code for drawing here
 }//end of makeChart function
 
 function init(){
-  canvasDiv = document.querySelector("#myCanvas");
   doAjax("./data/films.json",makeChart);
 }
-init()
+
+window.addEventListener("load",init);
+
+
 /*
 1. Have a look at https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API it provides a basic introduction to the <canvas> element.
 See if you can draw a rectangle and some lines using the canvas. Write this code in the makeChart function.
@@ -103,7 +49,6 @@ c) Can you modify this example so that it displays a bar chart
 Have a look at the .map() method to see if you can generate an array of film durations and an array of film titles.
 here are some links to help:
     https://github.com/CHT2531/functional-programming/blob/master/notes.md#the-arraymap-method
-    https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 
 a) Test the map() works using some simple console.log statements
