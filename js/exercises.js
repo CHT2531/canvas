@@ -12,9 +12,9 @@ function makeChart(data)
 {
   const films = data;
   console.log(films);
-	const canvasDiv = document.querySelector("#myCanvas");
+  const canvasDiv = document.querySelector("#myCanvas");
   const ctx = canvasDiv.getContext("2d");
-	//add your code for drawing here
+  //add your code for drawing here
 }//end of makeChart function
 
 function init(){
