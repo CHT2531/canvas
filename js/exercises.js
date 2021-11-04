@@ -1,5 +1,5 @@
 
-function doAjax(url,callback)
+function loadData(url,callback)
 {
 	fetch(url).then(function(response) {
 		return response.json();
@@ -14,11 +14,13 @@ function makeChart(data)
   console.log(films);
   const canvasDiv = document.querySelector("#myCanvas");
   const ctx = canvasDiv.getContext("2d");
+	
   //add your code for drawing here
-}//end of makeChart function
+	
+}//end of makeChart function, do not remove
 
 function init(){
-  doAjax("./data/films.json",makeChart);
+  loadData("./data/films.json",makeChart);
 }
 
 window.addEventListener("load",init);
