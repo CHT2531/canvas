@@ -1,5 +1,5 @@
 
-function doAjax(url,callback)
+function loadData(url,callback)
 {
 	fetch(url).then(function(response) {
 		return response.json();
@@ -78,7 +78,7 @@ function makeChart(data)
 }//end of makeChart function
 
 function init(){
-  doAjax("./data/films.json",makeChart);
+  loadData("./data/films.json",makeChart);
 }
 
 window.addEventListener("load",init);
