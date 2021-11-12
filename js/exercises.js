@@ -33,9 +33,9 @@ See if you can draw a rectangle and some lines using the canvas. Write this code
 
 /*
 2. Have a think about how you can draw a bar chart that shows the duration of each film from the films array. Try to build this up in stages e.g.
-a) Can you draw simple axis for the chart.
-b) Can you loop over the film objects and display the duration of each film in the console.
-C) Can you modify this loop so that a rectangle is drawn for each film, use the film duration to set the height of the rectangle.
+a) Can you loop over the film objects and display the duration of each film in the console.
+b) Can you modify this loop so that a rectangle is drawn for each film, use the film duration to set the height of the rectangle.
+c) Can you draw simple axis for the chart.
 d) Can you add some text to the chart to label the axis.
 */
 
