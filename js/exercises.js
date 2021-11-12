@@ -42,7 +42,7 @@ d) Can you add some text to the chart to label the axis.
 /*
 3. It would be much easier if we simply used a library to build the chart.
 a) Comment out your drawing code.
-b) Have a look at https://www.chartjs.org/docs/latest/getting-started/. Can you get this example to work. At the moment, don't worry about using the film data
+b) Have a look at https://www.chartjs.org/docs/latest/. Can you get this example to work. At the moment, don't worry about using the film data
 c) Can you modify this example so that it displays a bar chart
 */
 
