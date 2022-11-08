@@ -8,51 +8,59 @@ function loadData(url,callback)
 	});
 }
 
-function makeChart(data)
+function makeChart(films)
 {
-  const films = data;
   console.log(films);
   const canvasDiv = document.querySelector("#myCanvas");
   const ctx = canvasDiv.getContext("2d");
-	
+
   //add your code for drawing here
-	
+  
 }//end of makeChart function, do not remove
 
 function init(){
-  loadData("./data/films.json",makeChart);
+  loadData("./data/films.json", makeChart);
 }
 
-window.addEventListener("load",init);
+window.addEventListener("load", init);
 
 
-/*
-1. Have a look at https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API it provides a basic introduction to the <canvas> element.
-See if you can draw a rectangle and some lines using the canvas. Write this code in the makeChart function.
-*/
 
-/*
-2. Have a think about how you can draw a bar chart that shows the duration of each film from the films array. Try to build this up in stages e.g.
-a) Can you loop over the film objects and display the duration of each film in the console.
-b) Can you modify this loop so that a rectangle is drawn for each film, use the film duration to set the height of the rectangle.
-c) Can you draw simple axis for the chart.
-d) Can you add some text to the chart to label the axis.
-*/
+//1. Have a look at 
+// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API and 
+// https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html 
+// These provide a basic introduction to the <canvas> element.
+// See if you can draw a rectangle and some lines using the canvas. 
+// The key properties and methods you will need are:
+  // fillStyle
+  // fillRect
+  // strokeStyle
+  // lineWidth
+  // beginPath()
+  // moveTo()
+  // lineTo()
+  // stroke()
+//Write this code in the makeChart function.
 
-/*
-3. It would be much easier if we simply used a library to build the chart.
-a) Comment out your drawing code.
-b) Have a look at https://www.chartjs.org/docs/latest/. Can you get this example to work. At the moment, don't worry about using the film data
-c) Can you modify this example so that it displays a bar chart
-*/
+// 2. Now try and draw a bar chart that shows the duration of each film from the films array. 
+// Try to build this up in stages e.g.
+// a) Can you loop over the film objects and display the duration of each film in the console.
+// b) Can you modify this loop so that a rectangle is drawn for each film
+// C) Can you use the film duration to set the height of each rectangle.
+// c) Can you draw simple axes for the chart.
+// d) Can you add some text to the chart to label the axes.
 
-/*
-4. The chartjs library expects data to be flat arrays (not an array of objects).
-Have a look at the .map() method to see if you can generate an array of film durations and an array of film titles.
-here are some links to help:
-    https://github.com/CHT2531/functional-programming/blob/master/notes.md#the-arraymap-method
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+// 3. It would be much easier if we simply used a library to build the chart.
+// a) Comment out your drawing code.
+// b) Have a look at https://www.chartjs.org/docs/latest/. 
+    // To install use the CDN. 
+    // Then copy the example code from https://www.chartjs.org/docs/latest/ and test it works.
 
-a) Test the map() works using some simple console.log statements
-b) Think about how you can use this data so that the chartjs bar chart displays a list of films and their durations.
-*/
+// 4. Now try and modify this example so that it uses the films data 
+// The chartjs library expects data to be flat arrays (not an array of objects).
+// Use use the .map() method to generate an array of film durations and a separate array of film titles.
+// Here are some links to help:
+//    https://github.com/CHT2531/functional-programming/blob/master/notes.md#the-arraymap-method
+//    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+// Test the map() works using some simple console.log statements
+// Finally use this data so that the chartjs bar chart displays a list of films and their durations.
