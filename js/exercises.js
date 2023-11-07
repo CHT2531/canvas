@@ -11,11 +11,15 @@ function loadData(url,callback)
 function makeChart(films)
 {
   console.log(films);
+  films.forEach(function(film){
+    console.log(film.title);
+  });
+
   const canvasDiv = document.querySelector("#myCanvas");
   const ctx = canvasDiv.getContext("2d");
 
   //add your code for drawing here
-  
+
 }//end of makeChart function, do not remove
 
 function init(){
@@ -27,7 +31,8 @@ window.addEventListener("load", init);
 
 
 //1. Have a look at 
-// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API and 
+// https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API 
+// http://lordoc.com/sheet/canvas/ 
 // https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html 
 // These provide a basic introduction to the <canvas> element.
 // See if you can draw a rectangle and some lines using the canvas. 
@@ -53,10 +58,12 @@ window.addEventListener("load", init);
 // 3. It would be much easier if we simply used a library to build the chart.
 // a) Comment out your drawing code.
 // b) Have a look at https://www.chartjs.org/docs/latest/. 
-    // To install use the CDN. 
-    // Then copy the example code from https://www.chartjs.org/docs/latest/ and test it works.
+    // If you look in the HTML page there is alreay a link to the CDN for the library. 
+    // Copy the example code from https://www.chartjs.org/docs/latest/getting-started/ and test it works.
+// c) Can you change this example so that it displays information about the durations of different films. 
+    //To start with hard code the values into the Chart.js code.
 
-// 4. Now try and modify this example so that it uses the films data 
+// 4. Now try and modify this example so that it uses the loaded films data 
 // The chartjs library expects data to be flat arrays (not an array of objects).
 // Use use the .map() method to generate an array of film durations and a separate array of film titles.
 // Here are some links to help:
